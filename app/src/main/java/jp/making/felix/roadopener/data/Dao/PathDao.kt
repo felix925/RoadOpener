@@ -1,4 +1,4 @@
-package jp.making.felix.Pathopener.Dao
+package jp.making.felix.roadopener.data.Dao
 
 import androidx.room.*
 import jp.making.felix.roadopener.data.Entity.PathEntity
@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface PathDao {
-    @Query("SELECT * FROM pathentity")
+    @Query("SELECT * FROM path")
     fun getAll(): Flow<List<PathEntity>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)

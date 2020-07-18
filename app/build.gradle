@@ -33,6 +33,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
 }
 
 dependencies {
@@ -62,10 +66,17 @@ dependencies {
     def epoxy_version = "4.0.0-beta6"
     implementation "com.airbnb.android:epoxy:$epoxy_version"
     implementation "com.airbnb.android:epoxy-databinding:$epoxy_version"
-    kapt "com.airbnb.android:-epoxy-processor:$epoxy_version"
+    kapt "com.airbnb.android:epoxy-processor:$epoxy_version"
 
     def store_version = "4.0.0-alpha06"
     implementation "com.dropbox.mobile.store:store4:$store_version"
+
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0'
+
+    implementation 'androidx.hilt:hilt-common:1.0.0-SNAPSHOT'
+    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-SNAPSHOT'
+    kapt 'androidx.hilt:hilt-compiler:1.0.0-SNAPSHOT'
 
     testImplementation 'junit:junit:4.12'
 

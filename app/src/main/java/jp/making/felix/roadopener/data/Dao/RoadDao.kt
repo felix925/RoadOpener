@@ -1,4 +1,4 @@
-package jp.making.felix.roadopener.Dao
+package jp.making.felix.roadopener.data.Dao
 
 import androidx.room.*
 import jp.making.felix.roadopener.data.Entity.RoadEntity
@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface RoadDao {
-    @Query("SELECT * FROM roadentity")
+    @Query("SELECT * FROM road")
     fun getAll(): Flow<List<RoadEntity>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
