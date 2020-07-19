@@ -71,6 +71,10 @@ dependencies {
     def store_version = "4.0.0-alpha06"
     implementation "com.dropbox.mobile.store:store4:$store_version"
 
+    def lottie_version = "3.4.1"
+    implementation "com.airbnb.android:lottie:$lottie_version"
+
+
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0'
 
