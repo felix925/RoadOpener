@@ -9,31 +9,6 @@
         android:id="@+id/listFragment"
         android:name="jp.making.felix.roadopener.ui.RoadListFragment"
         tools:layout="@layout/fragment_list">
-        <action
-            android:id="@+id/action_list_to_registRoad"
-            app:destination="@id/registRoadFragment" />
-        <action
-            android:id="@+id/action_list_to_detail"
-            app:destination="@id/detailFragment" />
     </fragment>
-
-    <fragment
-        android:id="@+id/detailFragment"
-        android:name="jp.making.felix.roadopener.ui.RoadDetailFragment"
-        tools:layout="@layout/fragment_detail">
-        <action
-            android:id="@+id/action_detail_to_registPath"
-            app:destination="@id/registPathFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/registPathFragment"
-        android:name="jp.making.felix.roadopener.ui.PathRegistFragment"
-        tools:layout="@layout/fragment_regist_path"/>
-
-    <fragment
-        android:id="@+id/registRoadFragment"
-        android:name="jp.making.felix.roadopener.ui.RoadRegistFragment"
-        tools:layout="@layout/fragment_regist_road"/>
 
 </navigation>

@@ -5,25 +5,15 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity(
-    tableName = "path",
-    foreignKeys = [
-        ForeignKey(
-            entity = RoadEntity::class,
-            parentColumns = ["id"],
-            childColumns = ["parentId"],
-            onDelete = ForeignKey.CASCADE
-        )
-    ]
-)
-data class PathEntity (
+@Entity(tableName = "path")
+data class PathEntity(
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "pathId")
+    var id: Int = 0,
     @ColumnInfo(name = "title")
     val title: String,
     @ColumnInfo(name = "parentId")
-    val parentRoad: Int,
+    val parentId: Int,
     @ColumnInfo(name = "isComplete")
     var isComplete: Boolean
-){
-    @PrimaryKey(autoGenerate = true)
-    var id = 0
-}
+)

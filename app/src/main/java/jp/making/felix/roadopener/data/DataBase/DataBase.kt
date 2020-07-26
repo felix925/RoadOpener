@@ -5,6 +5,7 @@ import androidx.room.RoomDatabase
 import jp.making.felix.roadopener.data.Dao.PathDao
 import jp.making.felix.roadopener.data.Dao.RoadDao
 import jp.making.felix.roadopener.data.Entity.PathEntity
+import jp.making.felix.roadopener.data.Entity.RoadAndPath
 import jp.making.felix.roadopener.data.Entity.RoadEntity
 
 @Database(

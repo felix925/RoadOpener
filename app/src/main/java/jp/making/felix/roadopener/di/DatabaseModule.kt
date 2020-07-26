@@ -20,6 +20,10 @@ class DatabaseModule {
         appContext,
         DataBase::class.java,
         "LocalDB.db"
-    ).fallbackToDestructiveMigration().build()
+    ).build()
 
+    @Provides
+    fun provideRoadDao(dataBase: DataBase) = dataBase.roadDao()
+    @Provides
+    fun providePathDao(dataBase: DataBase) = dataBase.pathDao()
 }
