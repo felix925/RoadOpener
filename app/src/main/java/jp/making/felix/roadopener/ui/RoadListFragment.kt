@@ -10,6 +10,7 @@ import jp.making.felix.roadopener.R
 import jp.making.felix.roadopener.databinding.FragmentListBinding
 import jp.making.felix.roadopener.viewModel.RoadListViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
 @AndroidEntryPoint
