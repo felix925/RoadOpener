@@ -18,8 +18,10 @@ import kotlinx.coroutines.launch
 class RoadListViewModel @ViewModelInject constructor(
     private val repo: RoadRepository
 ): ViewModel() {
-    val roadData: LiveData<List<RoadEntity>> = repo.loadAllRoad().asLiveData()
-    val pathData: LiveData<List<PathEntity>> = repo.loadAllPath().asLiveData()
+    val roadData: LiveData<List<RoadEntity>> =
+        repo.loadAllRoad().asLiveData()
+    val pathData: LiveData<List<PathEntity>> =
+        repo.loadAllPath().asLiveData()
     fun hash() {
         Log.d("HASH", repo.toString())
     }

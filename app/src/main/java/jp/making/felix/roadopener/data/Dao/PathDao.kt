@@ -11,7 +11,7 @@ interface PathDao {
 
     @Transaction
     @Query("SELECT * FROM path WHERE parentId = :id")
-    fun getPathById(id: Int): List<PathEntity>
+    fun getPathById(id: Int): Flow<List<PathEntity>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertPath(vararg path: PathEntity)

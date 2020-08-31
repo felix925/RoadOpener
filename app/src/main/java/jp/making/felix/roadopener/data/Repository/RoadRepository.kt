@@ -8,6 +8,7 @@ import javax.inject.Singleton
 import jp.making.felix.roadopener.data.DataBase.DataBase
 import jp.making.felix.roadopener.data.Entity.PathEntity
 import jp.making.felix.roadopener.data.Entity.RoadEntity
+import kotlinx.coroutines.flow.Flow
 
 
 class RoadRepository @Inject constructor(
@@ -21,7 +22,7 @@ class RoadRepository @Inject constructor(
     fun updateRoad(roadEntity: RoadEntity) = roadDao.updateRoad(roadEntity)
 
     fun loadAllPath() = pathDao.getAll()
-    fun getPathById(id: Int): List<PathEntity> {
+    fun getPathById(id: Int): Flow<List<PathEntity>> {
         return pathDao.getPathById(id)
     }
     fun insertPath(pathEntity: PathEntity) = pathDao.insertPath(pathEntity)

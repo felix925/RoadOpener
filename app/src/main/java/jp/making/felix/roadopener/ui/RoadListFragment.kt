@@ -1,6 +1,7 @@
 package jp.making.felix.roadopener.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -10,7 +11,6 @@ import jp.making.felix.roadopener.R
 import jp.making.felix.roadopener.databinding.FragmentListBinding
 import jp.making.felix.roadopener.viewModel.RoadListViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
 @AndroidEntryPoint
@@ -24,18 +24,18 @@ class RoadListFragment : Fragment(R.layout.fragment_list) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentListBinding.bind(view)
         // RoadController {}で書けるが、可読性のためにあえて(onClick{})を用いる。
-        roadController = RoadController(onClick = {road ->
-            
+        roadController = RoadController(onClick = { road ->
+            Log.d("some", "msg")
         })
         pathController = PathController(onClick = {
             viewModel.hash()
         })
 
         binding.apply {
-            lifecycleOwner = viewLifecycleOwner
+            this.lifecycleOwner = viewLifecycleOwner
             roadRecycler.setController(roadController)
             pathRecycler.setController(pathController)
-            fab.setOnClickListener {viewModel.hash()}
+            fab.setOnClickListener { viewModel.hash() }
         }
 
         viewModel.roadData.observe(viewLifecycleOwner) {

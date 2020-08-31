@@ -1,7 +1,5 @@
 package jp.making.felix.roadopener.ui
 
-import com.airbnb.epoxy.CarouselModelBuilder
-import com.airbnb.epoxy.EpoxyModel
 import com.airbnb.epoxy.TypedEpoxyController
 import com.airbnb.epoxy.carousel
 import jp.making.felix.roadopener.ModelsRoadBindingModel_
@@ -14,7 +12,7 @@ class RoadController(
     override fun buildModels(road: List<RoadEntity>) {
         carousel {
             id("carousel")
-            numViewsToShowOnScreen(2.5f)
+            numViewsToShowOnScreen(2.75f)
             withModelsFrom(road) {
                 ModelsRoadBindingModel_()
                     .id(it.id)
