@@ -3,6 +3,7 @@ package jp.making.felix.roadopener.ui
 import com.airbnb.epoxy.TypedEpoxyController
 import jp.making.felix.roadopener.data.Entity.PathEntity
 import jp.making.felix.roadopener.modelsPath
+import kotlinx.coroutines.withContext
 
 class PathController(
     private val onClick: (PathEntity) -> Unit
@@ -18,6 +19,5 @@ class PathController(
                 }
             }
         }
-
     }
 }
