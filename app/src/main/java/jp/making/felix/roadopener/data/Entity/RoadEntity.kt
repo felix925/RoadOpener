@@ -11,6 +11,8 @@ data class RoadEntity(
     var id: Int = 0,
     @ColumnInfo(name = "title")
     val title: String,
-    @ColumnInfo(name = "description")
-    val desc:String
+    @ColumnInfo(name = "complete")
+    var complete: Int,
+    @ColumnInfo(name = "pathCount")
+    var pathCount: Int
 )
