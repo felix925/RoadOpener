@@ -10,8 +10,7 @@ import com.github.mikephil.charting.data.PieEntry
 
 @BindingAdapter(value = ["bind:complete", "bind:notComplete"])
 fun setPieData(view: PieChart, complete: Int, notComplete: Int) {
-    val title = arrayListOf("達成", "未達成")
-    val color = listOf(Color.GREEN, Color.GRAY)
+    val color = listOf(Color.rgb(150, 240, 150), Color.GRAY)
     val pieDataSet = PieDataSet(
         listOf(
             PieEntry(complete.toFloat(), "完了"),
@@ -30,4 +29,6 @@ fun setPieData(view: PieChart, complete: Int, notComplete: Int) {
     view.setDrawEntryLabels(false)
     view.description = desc
     view.data = PieData(pieDataSet)
+    view.animateX(500)
+    view.invalidate()
 }

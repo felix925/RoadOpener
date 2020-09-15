@@ -13,6 +13,13 @@ interface RoadDao {
     @Query("SELECT * FROM road")
     fun getAllRoad(): Flow<List<RoadEntity>>
 
+    @Query("SELECT * FROM road")
+    fun refreshGetAllRoad(): List<RoadEntity>
+
+    @Transaction
+    @Query("SELECT * FROM road WHERE roadId = :id")
+    fun getRoadById(id: Int): RoadEntity
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertRoad(vararg road: RoadEntity)
 

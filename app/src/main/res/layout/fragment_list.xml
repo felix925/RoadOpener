@@ -5,7 +5,7 @@
     <data>
 
         <variable
-            name="viewModel"
+            name="vm"
             type="jp.making.felix.roadopener.viewModel.RoadListViewModel" />
     </data>
 
@@ -18,10 +18,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:splitMotionEvents="true"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/roadTitleField"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
@@ -33,6 +34,25 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/roadTitleField"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="@string/road_input_hint"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/fab"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fab">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/roadTitleInput"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
