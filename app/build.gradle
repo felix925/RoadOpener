@@ -38,6 +38,12 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -93,10 +99,9 @@ dependencies {
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-SNAPSHOT"
     kapt "androidx.hilt:hilt-compiler:1.0.0-SNAPSHOT"
 
-    testImplementation "junit:junit:4.12"
-
-
-    androidTestImplementation "androidx.test.ext:junit:1.1.1"
-    androidTestImplementation "androidx.test.espresso:espresso-core:3.2.0"
+    testImplementation "junit:junit:4.13"
+    testImplementation "org.robolectric:robolectric:4.4"
+    androidTestImplementation "androidx.test.ext:junit:1.1.2"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.3.0"
 
 }
