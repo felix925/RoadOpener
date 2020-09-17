@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">RoadOpener</string>
     <string name="road_input_hint">達成したい目標を追加</string>
-    <string name="path_input_hint">Todoを追加</string>
+    <string name="path_input_hint">目標までのタスクを追加</string>
 </resources>
