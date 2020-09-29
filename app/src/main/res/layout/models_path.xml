@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:text="@{title}"
             android:textSize="32sp"
+            app:layout_constraintEnd_toStartOf="@+id/completeSwitch"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="SampleData" />
